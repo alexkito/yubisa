@@ -1,16 +1,16 @@
 package com.anu.yubisa;
 
-import androidx.appcompat.app.AppCompatActivity;
-
-import android.os.Bundle;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
+
 public class MainActivity extends AppCompatActivity {
     DatabaseHelper db;
-    Button logout;
+    Button logout, home, tes;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -18,8 +18,9 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         db = new DatabaseHelper(this);
-
+        home = (Button)findViewById(R.id.btn_menu);
         logout = (Button)findViewById(R.id.btn_logout);
+        tes = (Button)findViewById(R.id.btn_tes);
 
 
         Boolean checkSession = db.checkSession("ada");
@@ -42,5 +43,15 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
+
+        //Menu
+        home.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent home = new Intent(MainActivity.this,Home.class);
+                startActivity(home);
+            }
+        });
+
     }
 }
