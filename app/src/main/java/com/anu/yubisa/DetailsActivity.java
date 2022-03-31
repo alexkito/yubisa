@@ -9,8 +9,8 @@ import android.widget.TextView;
 
 public class DetailsActivity extends AppCompatActivity {
     ImageButton kurang, tambah;
-    TextView tv;
-    int count;
+    TextView jumlah, harga;
+    int count, total;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -18,21 +18,26 @@ public class DetailsActivity extends AppCompatActivity {
         setContentView(R.layout.activity_details);
         kurang = findViewById(R.id.btn_10);
         tambah = findViewById(R.id.btn_11);
-        tv = findViewById(R.id.textView13);
+        jumlah = findViewById(R.id.textView13);
+        harga = findViewById(R.id.textView14);
+        String price = harga.getText().toString();
+        int price2 = Integer.parseInt(price);
 
         tambah.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view){
                 count++;
-                tv.setText(count + "");
-
+                total = price2 * count;
+                jumlah.setText(Integer.toString(count));
+                harga.setText(Integer.toString(total));
             }
         });
 
         kurang.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view){
                 count--;
-                tv.setText(count + "");
-
+                total = price2 * count;
+                jumlah.setText(count + "");
+                harga.setText(total + "");
             }
         });
     }
