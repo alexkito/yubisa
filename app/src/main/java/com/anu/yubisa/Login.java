@@ -8,10 +8,11 @@ import android.content.Intent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Toast;
 public class Login extends AppCompatActivity {
     DatabaseHelper db;
-    Button login, register;
+    ImageView login, register;
     EditText username, password;
 
     @Override
@@ -23,8 +24,8 @@ public class Login extends AppCompatActivity {
 
         username = (EditText)findViewById(R.id.edtText_username);
         password = (EditText)findViewById(R.id.edtText_password);
-        login = (Button)findViewById(R.id.btn_login);
-        register = (Button)findViewById(R.id.btn_register);
+        login = (ImageView)findViewById(R.id.btn_login);
+        register = (ImageView)findViewById(R.id.btn_register);
 
         //register
         register.setOnClickListener(new View.OnClickListener() {
