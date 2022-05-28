@@ -8,10 +8,11 @@ import android.content.Intent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Toast;
 public class Regis extends AppCompatActivity {
     DatabaseHelper db;
-    Button login, register;
+    ImageView login, register;
     EditText username, password, passwordConf;
 
     @Override
@@ -24,8 +25,8 @@ public class Regis extends AppCompatActivity {
         username = (EditText)findViewById(R.id.edtText_usernameRegist);
         password = (EditText)findViewById(R.id.edtText_passwordRegist);
         passwordConf = (EditText)findViewById(R.id.edtText_passwordConfRegist);
-        login = (Button)findViewById(R.id.btn_loginRegist);
-        register = (Button)findViewById(R.id.btn_registerRegist);
+        login = (ImageView)findViewById(R.id.btn_loginRegist);
+        register = (ImageView)findViewById(R.id.btn_registerRegist);
 
         //login
         login.setOnClickListener(new View.OnClickListener() {

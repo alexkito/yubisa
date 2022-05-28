@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -26,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
     EditText input_uang;
     Button rp_usd, rp_euro, rp_yen;
     TextView hasil_konversi;
-    ImageButton logout;
+    ImageView logout;
 
     double angka;
 
@@ -41,7 +42,7 @@ public class MainActivity extends AppCompatActivity {
         rp_euro = (Button) findViewById(R.id.rpeuro);
         rp_yen = (Button) findViewById(R.id.rpyen);
         hasil_konversi = (TextView) findViewById(R.id.hasil_konversi);
-        logout = (ImageButton)findViewById(R.id.btn_logout);
+        logout = (ImageView) findViewById(R.id.btn_logout);
 
         Boolean checkSession = db.checkSession("ada");
         if (checkSession == false) {
